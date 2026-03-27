@@ -42,6 +42,9 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        // Spatie role assignment
+        $user -> assignRole('Employee');
+
         event(new Registered($user));
 
         Auth::login($user);
