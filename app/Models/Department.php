@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
+
+    // Fillable fields
+    protected $fillable = [
+        'name',
+        'description',
+        'status'    
+    ];
+
     /**
      * Show employees in this department
      */

@@ -9,8 +9,18 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Employee extends Model
 {   
 
+    // Which columns are safe to be filled from a form
     protected $fillable = [
-        'user_id', 'department_id', 'first_name', 'last_name','email','phone','address','position','hire_date','employment_status',
+        'user_id', 
+        'department_id', 
+        'first_name', 
+        'last_name',
+        'email',
+        'phone',
+        'address',
+        'position',
+        'hire_date',
+        'employment_status',
     ];
 
     /** 
@@ -47,4 +57,5 @@ class Employee extends Model
     public function leaveRequestsApproved(): HasMany {
         return $this->hasMany(LeaveRequest::class, 'approved_by');
     }
+    
 }
